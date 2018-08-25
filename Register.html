@@ -1,0 +1,127 @@
+<html>
+<head>
+<style>
+form
+{
+   margin-left: 300px;
+    margin-top: 100px;
+    border: 2px solid red;
+    width: 50%;
+    background-color: greenyellow;
+    
+}
+    
+    span{
+        color: red;
+        font-style: italic;
+    }
+    
+    body{
+        background-image: url(Northeast-Pennsylvania-United-States-Oakland-Run-Waterfall-York-County-along-the-Mason-Dixon-Trail-Landscape-Nature-Wallpaper-HD-5200x3250-1920x1080.jpg);
+    }
+    
+</style>
+<script>
+function validate()
+    {
+        var a=document.getElementById("username").value;
+        var b=document.getElementById("password").value;
+        var c=document.getElementById("password1").value;
+        var d=document.getElementById("mobile").value;
+        var e=document.getElementsByName("gender");
+        
+        
+        if(a=="")
+            {
+                document.getElementById("message").innerHTML="please fill the username";
+                return false;
+            }
+        
+        if(a.length>10)
+            {
+                document.getElementById("message").innerHTML="Username length should not be more than 10";
+                return false;
+                
+            }
+        
+        if(b==""||b.length>5)
+            {
+                document.getElementById("message1").innerHTML="please fill the password field or password length should not be more than 5";
+                return false;
+            }
+        
+        if(c=="")
+            {
+                document.getElementById("message2").innerHTML="please confirm password";
+                return false;
+            }
+        
+        if(b!=c)
+            {
+                document.getElementById("message2").innerHTML="Password not matching";
+                return false;
+            }
+        
+        
+        if(d==""||isNaN(d)||d.length>10)
+            {
+                document.getElementById("message3").innerHTML="empty field or accept only numbers or not more than 10";
+                return false;
+            }
+        
+        
+        for(var i=0;i<e.length;i++)
+            {
+                if(e[i].checked==true)
+                    {
+                        return true;
+                    }
+            }
+        
+        document.getElementById("message4").innerHTML="please select one";
+        return false;
+        
+        
+        
+        
+            
+        
+        
+        
+    }
+
+    
+</script>    
+    
+</head>
+<body>
+<form onsubmit=" return validate()">
+Enter Your Username:<input type="text" id="username" value="">
+<span id="message"></span>
+<br><br>
+
+Enter Your Password:<input type="text" id="password" value="">
+<span id="message1"></span>
+<br><br>
+
+Confirm Your Password:<input type="text" id="password1" value="">
+<span id="message2"></span>
+<br><br>
+
+Enter Your Mobile Number:<input type="text" id="mobile" value="">
+<span id="message3"></span>
+<br><br>
+
+Select The Gender:<input type="radio" name="gender" value="Male">Male<input type="radio" name="gender" value="Female">Female
+<br>
+<div><p id="message4"></p></div>
+<br>
+    
+<input type="submit" value="Submit">
+
+    
+</form>    
+    
+    
+</body>
+</html>
